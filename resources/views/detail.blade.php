@@ -15,20 +15,18 @@
     </h1>
 
     @if($recipe->video_url)
-        <div class="mb-8 rounded-xl overflow-hidden shadow-lg aspect-w-16 aspect-h-9">
-            <div class="aspect-w-16 aspect-h-9 bg-gray-200 rounded-2xl overflow-hidden shadow-lg mb-10 relative" style="padding-bottom: 56.25%; height: 0;">
-                <iframe 
-                    src="https://www.youtube.com/embed/{{ $recipe->video_url }}" 
-                    class="absolute top-0 left-0 w-full h-full"
-                    title="Video Resep" 
-                    frameborder="0" 
-                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
-                    allowfullscreen>
-                </iframe>
-            </div>
+        <div class="relative w-full mb-10 bg-gray-200 rounded-xl overflow-hidden shadow-lg" style="padding-bottom: 56.25%;">
+            <iframe 
+                src="https://www.youtube.com/embed/{{ $recipe->video_url }}" 
+                class="absolute top-0 left-0 w-full h-full"
+                title="Video Resep" 
+                frameborder="0" 
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
+                allowfullscreen>
+            </iframe>
         </div>
     @else
-        <div class="aspect-w-16 aspect-h-9 mb-10 font-[Arial] rounded-xl overflow-hidden shadow-lg">
+        <div class="aspect-w-16 aspect-h-9 mb-10 rounded-xl overflow-hidden shadow-lg">
             <img src="{{ asset($recipe->image) }}" alt="{{ $recipe->title }}" class="w-full h-full object-cover">
         </div>
     @endif

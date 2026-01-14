@@ -3,7 +3,7 @@
 namespace App\Providers;
 
 use Illuminate\Support\ServiceProvider;
-use Illuminate\Pagination\Paginator; 
+use Illuminate\Support\Facades\URL; // <--- JANGAN LUPA BARIS INI
 
 class AppServiceProvider extends ServiceProvider
 {
@@ -20,6 +20,9 @@ class AppServiceProvider extends ServiceProvider
      */
     public function boot(): void
     {
-        Paginator::useTailwind(); 
+        // Paksa semua link dan aset menggunakan HTTPS (khusus Production/Railway)
+        if($this->app->environment('production')) {
+            URL::forceScheme('https');
+        }
     }
 }

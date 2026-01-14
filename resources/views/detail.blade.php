@@ -16,13 +16,13 @@
 
     @if($recipe->video_url)
         <div class="mb-8 rounded-xl overflow-hidden shadow-lg aspect-w-16 aspect-h-9">
-            <iframe class="w-full h-[400px]" 
-                    src="https://www.youtube.com/embed/{{ $recipe->video_url }}" 
-                    title="YouTube video player" 
-                    frameborder="0" 
-                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
-                    allowfullscreen>
-            </iframe>
+        <iframe 
+            src="https://www.youtube.com/embed/{{ $recipe->video_url }}" 
+            class="absolute top-0 left-0 w-full h-full rounded-2xl shadow-lg"
+            title="YouTube video player" frameborder="0" 
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
+            allowfullscreen>
+        </iframe>
         </div>
         @else
         <div class="aspect-w-16 aspect-h-9 mb-10 font-[Arial] rounded-xl overflow-hidden shadow-lg">
